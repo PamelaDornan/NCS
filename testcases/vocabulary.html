@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<meta charset="UTF-8">
+		<script>
+			var last="Agethree";
+			function closeAll() {
+					document.getElementById(last).style.visibility = 'hidden';
+					document.getElementById(last).style.display = 'none';
+			}
+			function toggle(tog, x){
+				var visibility = document.getElementById(x).style.visibility;
+				var display = document.getElementById(x).style.display;
+				closeAll();
+				if (visibility == "visible" || display == "inline"){ 
+					document.getElementById(x).style.visibility = 'hidden';
+					document.getElementById(x).style.display = 'none';   
+					var action = 'on';
+				} 
+				if (visibility == "hidden" || display == "none"){ 
+					document.getElementById(x).style.visibility = 'visible';
+					document.getElementById(x).style.display = 'inline';  
+					var action = 'off';
+				} 
+				last=x;
+			}
+		</script>
+		<link href="../css/NCS.css" rel="stylesheet" type="text/css" />
+	<header>
+	<body>
+	<center>
+	
+	<h3 class="testcase" id='H3Agethree' onclick='toggle("on", "Agethree")' style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 3</h3>
+	<div id ="Agethree" style="visibility:hidden;display:none;">
+		Age3
+	</div>
+	
+	
+<h3 class="testcase" id="H3Agefour" onclick='toggle("on", "Agefour")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 4</h3>
+<div id ="Agefour"  style="visibility:hidden;display:none;">
+	Age4
+</div>
+
+
+<h3 class="testcase" id="H3Age5" onclick='toggle("on", "Age5")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 5</h3>
+<div id ="Age5"  style="visibility:hidden;display:none;">
+	Age5
+</div>
+
+
+<h3 class="testcase" id="H3Age6" onclick='toggle("on", "Age6")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 6</h3>
+<div id ="Age6"  style="visibility:hidden;display:none;">
+	Age6
+</div>
+
+
+<h3 class="testcase" id="H3Age7"  onclick='toggle("on", "Age7")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 7</h3>
+<div id ="Age7"  style="visibility:hidden;display:none;">
+Age7
+</div>
+
+<h3 class="testcase" id="H3Age8"  onclick='toggle("on", "Age8")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 8</h3>
+<div id ="Age8"  style="visibility:hidden;display:none;">
+Age8
+</div>
+
+<h3 class="testcase" id="H3Age9"  onclick='toggle("on", "Age9")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 9</h3>
+<div id ="Age9"  style="visibility:hidden;display:none;">
+Age9
+</div>
+
+<h3 class="testcase" id="H3Age10"  onclick='toggle("on", "Age10")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 10</h3>
+<div id ="Age10"  style="visibility:hidden;display:none;">
+Age10
+</div>
+
+<h3 class="testcase" id="H3Age11"  onclick='toggle("on", "Age11")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 11</h3>
+<div id ="Age11"  style="visibility:hidden;display:none;">
+Age11
+</div>
+
+<h3 class="testcase" id="H3Age12"  onclick='toggle("on", "Age12")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 12</h3>
+<div id ="Age12"  style="visibility:hidden;display:none;">
+Age12
+</div>
+
+<h3 class="testcase" id="H3Age13"  onclick='toggle("on", "Age13")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 13</h3>
+<div id ="Age13"  style="visibility:hidden;display:none;">
+Age13
+</div>
+
+<h3 class="testcase" id="H3Age14"  onclick='toggle("on", "Age14")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 14</h3>
+<div id ="Age14"  style="visibility:hidden;display:none;">
+Age14
+</div>
+
+<h3 class="testcase" id="H3Age15"  onclick='toggle("on", "Age15")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 15</h3>
+<div id ="Age15"  style="visibility:hidden;display:none;">
+Age15
+</div>
+
+<h3 class="testcase" id="H3Age16"  onclick='toggle("on", "Age16")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 16</h3>
+<div id ="Age16"  style="visibility:hidden;display:none;">
+Age16
+</div>
+
+<h3 class="testcase" id="H3Age17"  onclick='toggle("on", "Age17")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Age 17</h3>
+<div id ="Age17"  style="visibility:hidden;display:none;">
+Age17
+</div>
+
+<h3 class="testcase" id="H3Over17none"  onclick='toggle("on", "Over17none")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 No Education</h3>
+<div id ="Over17none"  style="visibility:hidden;display:none;">
+Over17none
+</div>
+
+<h3 class="testcase" id="H3Over17Preschool"  onclick='toggle("on", "Over17Preschool")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 Preschool Education</h3>
+<div id ="Over17Preschool"  style="visibility:hidden;display:none;">
+Over17Preschool
+</div>
+
+<h3 class="testcase" id="H3Over17Kindergarten"  onclick='toggle("on", "Over17Kindergarten")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 Kindergarten Education</h3>
+<div id ="Over17Kindergarten"  style="visibility:hidden;display:none;">
+Over17Kindergarten
+</div>
+
+<h3 class="testcase" id="H3Over171st"  onclick='toggle("on", "Over171st")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 1st Grade Education</h3>
+<div id ="Over171st"  style="visibility:hidden;display:none;">
+Over171st
+</div>
+
+<h3 class="testcase" id="H3Over172nd"  onclick='toggle("on", "Over172nd")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 2nd Grade Education</h3>
+<div id ="Over172nd"  style="visibility:hidden;display:none;">
+Over172nd
+</div>
+
+<h3 class="testcase" id="H3Over173rd"  onclick='toggle("on", "Over173rd")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 3rd Grade Education</h3>
+<div id ="Over173rd"  style="visibility:hidden;display:none;">
+Over173rd
+</div>
+
+<h3 class="testcase" id="H3Over174th"  onclick='toggle("on", "Over174th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 4th Grade Education</h3>
+<div id ="Over174th"  style="visibility:hidden;display:none;">
+Over174th
+</div>
+
+<h3 class="testcase" id="H3Over175th"  onclick='toggle("on", "Over175th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 5th Grade Education</h3>
+<div id ="Over175th"  style="visibility:hidden;display:none;">
+Over175th
+</div>
+
+<h3 class="testcase" id="H3Over176th"  onclick='toggle("on", "Over176th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 6th Grade Education</h3>
+<div id ="Over176th"  style="visibility:hidden;display:none;">
+Over176th
+</div>
+
+<h3 class="testcase" id="H3Over177th"  onclick='toggle("on", "Over177th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 7th Grade Education</h3>
+<div id ="Over177th"  style="visibility:hidden;display:none;">
+Over177th
+</div>
+
+<h3 class="testcase" id="H3Over178th"  onclick='toggle("on", "Over178th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 8th Grade Education</h3>
+<div id ="Over178th"  style="visibility:hidden;display:none;">
+Over178th
+</div>
+
+<h3 class="testcase" id="H3Over179th"  onclick='toggle("on", "Over179th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 9th Grade Education</h3>
+<div id ="Over179th"  style="visibility:hidden;display:none;">
+Over179th
+</div>
+
+<h3 class="testcase" id="H3Over1710th"  onclick='toggle("on", "Over1710th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 10th Grade Education</h3>
+<div id ="Over1710th"  style="visibility:hidden;display:none;">
+Over1710th
+</div>
+
+<h3 class="testcase" id="H3Over1711th"  onclick='toggle("on", "Over1711th")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 11th Grade Education</h3>
+<div id ="Over1711th"  style="visibility:hidden;display:none;">
+Over1711th
+</div>
+
+<h3 class="testcase" id="H3Over1712thNoDiploma"  onclick='toggle("on", "Over1712thNoDiploma")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 12th Grade Education Without Diploma</h3>
+<div id ="Over1712thNoDiploma"  style="visibility:hidden;display:none;">
+Over1712thNoDiploma
+</div>
+
+<h3 class="testcase" id="H3Over17HSGraduate"  onclick='toggle("on", "Over17HSGraduate")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 High School Graduate</h3>
+<div id ="Over17HSGraduate"  style="visibility:hidden;display:none;">
+Over17HSGraduate
+</div>
+
+<h3 class="testcase" id="H3Over17GED"  onclick='toggle("on", "Over17GED")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With GED</h3>
+<div id ="Over17GED"  style="visibility:hidden;display:none;">
+Over17GED
+</div>
+
+<h3 class="testcase" id="H3Over17Less1College"  onclick='toggle("on", "Over17Less1College")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Less than 1 Year In College</h3>
+<div id ="Over17Less1College"  style="visibility:hidden;display:none;">
+Over17Less1College
+</div>
+
+<h3 class="testcase" id="H3Over171plusCollege"  onclick='toggle("on", "Over171plusCollege")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With One or More Years of College but No Degree</h3>
+<div id ="Over171plusCollege"  style="visibility:hidden;display:none;">
+Over171plusCollege
+</div>
+
+<h3 class="testcase" id="H3Over17Associates"  onclick='toggle("on", "Over17Associates")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Associates Degree</h3>
+<div id ="Over17Associates"  style="visibility:hidden;display:none;">
+Over17Associates
+</div>
+
+<h3 class="testcase" id="H3Over17Bachelor"  onclick='toggle("on", "Over17Bachelor")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Bachelor's Degree</h3>
+<div id ="Over17Bachelor"  style="visibility:hidden;display:none;">
+Over17Bachelor
+</div>
+
+<h3 class="testcase" id="H3Over17Masters"  onclick='toggle("on", "Over17Masters")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Masters Degree</h3>
+<div id ="Over17Masters"  style="visibility:hidden;display:none;">
+Over17Masters
+</div>
+
+<h3 class="testcase" id="H3Over17Professional"  onclick='toggle("on", "Over17Professional")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Professional Degree</h3>
+<div id ="Over17Professional"  style="visibility:hidden;display:none;">
+Over17Professional
+</div>
+
+<h3 class="testcase" id="H3Over17Doctorate"  onclick='toggle("on", "Over17Doctorate")'  style='cursor: pointer;cursor: hand;'>NIH TB Picture Vocabulary: Over 17 With Doctorate Degree</h3>
+<div id ="Over17Doctorate"  style="visibility:hidden;display:none;">
+Over17Doctorate
+</div>
+
+
+ 	</center>
+	</body>
+</html>

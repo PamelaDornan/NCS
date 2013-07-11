@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<meta charset="UTF-8">
+		<script>
+			var last="Never";
+			function closeAll() {
+					document.getElementById(last).style.visibility = 'hidden';
+					document.getElementById(last).style.display = 'none';
+			}
+			function toggle(tog, x){
+				var visibility = document.getElementById(x).style.visibility;
+				var display = document.getElementById(x).style.display;
+				closeAll();
+				if (visibility == "visible" || display == "inline"){ 
+					document.getElementById(x).style.visibility = 'hidden';
+					document.getElementById(x).style.display = 'none';   
+					var action = 'on';
+				} 
+				if (visibility == "hidden" || display == "none"){ 
+					document.getElementById(x).style.visibility = 'visible';
+					document.getElementById(x).style.display = 'inline';  
+					var action = 'off';
+				} 
+				last=x;
+			}
+		</script>
+		<link href="../css/NCS.css" rel="stylesheet" type="text/css" />
+	<header>
+	<body>
+	<center>
+	
+	<h3 class="testcase" id='H3Never' onclick='toggle("on", "Never")' style='cursor: pointer;cursor: hand;'>PROMIS Depression: Answered Never to All</h3>
+	<div id ="Never" style="visibility:hidden;display:none;">
+	<table class="testcase" cellpadding="10"><tr>
+	<th>Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+EDDEP29</td><td>Never</td><td>-0.80</td><td>41.0</td><td>6.59</td></tr><tr><td>
+EDDEP36</td><td>Never</td><td>-1.11</td><td>38.9</td><td>5.94</td></tr><tr><td>
+EDDEP17</td><td>Never</td><td>-1.26</td><td>37.4</td><td>5.63</td></tr><tr><td>
+EDDEP26</td><td>Never</td><td>-1.33</td><td>36.7</td><td>5.48</td></tr><tr><td>
+EDDEP46</td><td>Never</td><td>-1.41</td><td>35.9</td><td>5.41</td></tr><tr><td>
+EDDEP54</td><td>Never</td><td>-1.46</td><td>35.4</td><td>5.34</td></tr><tr><td>
+EDDEP31</td><td>Never</td><td>-1.49</td><td>35.1</td><td>5.27</td></tr><tr><td>
+EDDEP28</td><td>Never</td><td>-1.51</td><td>34.9</td><td>5.24</td></tr><tr><td>
+EDDEP50</td><td>Never</td><td>-1.54</td><td>34.6</td><td>5.23</td></tr><tr><td>
+EDDEP23</td><td>Never</td><td>-1.56</td><td>34.4</td><td>5.20</td></tr><tr><td>
+EDDEP30</td><td>Never</td><td>-1.57</td><td>34.3</td><td>5.18</td></tr><tr><td>
+EDDEP21</td><td>Never</td><td>-1.58</td><td>34.2</td><td>5.16
+</td></tr></table></div>
+<h3 class="testcase" id="H3Rarely" onclick='toggle("on", "Rarely")'  style='cursor: pointer;cursor: hand;'>PROMIS Depression: Answered Rarely to All</h3>
+<div id ="Rarely"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+EDDEP29</td><td>Rarely</td><td>0.20</td><td>51.0</td><td>4.13</td></tr><tr><td>
+EDDEP22</td><td>Rarely</td><td>0.33</td><td>53.3</td><td>2.99</td></tr><tr><td>
+EDDEP04</td><td>Rarely</td><td>0.45</td><td>54.5</td><td>2.42</td></tr><tr><td>
+EDDEP06</td><td>Rarely</td><td>0.50</td><td>54.0</td><td>2.07
+</td></tr></table></div>
+<h3 class="testcase" id="H3Sometimes" onclick='toggle("on", "Sometimes")'  style='cursor: pointer;cursor: hand;'>PROMIS Depression: Answered Sometimes to All</h3>
+<div id ="Sometimes"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+EDDEP29</td><td>Sometimes</td><td>0.83</td><td>58.3</td><td>4.32</td></tr><tr><td>
+EDDEP41</td><td>Sometimes</td><td>1.12</td><td>61.2</td><td>3.05</td></tr><tr><td>
+EDDEP04</td><td>Sometimes</td><td>1.19</td><td>61.9</td><td>2.47</td></tr><tr><td>
+EDDEP06</td><td>Sometimes</td><td>1.22</td><td>62.2</td><td>2.15
+</td></tr></table></div>
+<h3 class="testcase" id="H3Often" onclick='toggle("on", "Often")'  style='cursor: pointer;cursor: hand;'>PROMIS Depression: Answered Often to All</h3>
+<div id ="Often"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>	
+EDDEP29</td><td>Often</td><td>1.50</td><td>65.0</td><td>4.49</td></tr><tr><td>
+EDDEP41</td><td>Often</td><td>1.82</td><td>68.2</td><td>3.08</td></tr><tr><td>
+EDDEP04</td><td>Often</td><td>1.91</td><td>69.1</td><td>2.50</td></tr><tr><td>
+EDDEP06</td><td>Often</td><td>1.95</td><td>69.5</td><td>2.18
+</td></tr></table></div>
+<h3 class="testcase" id="H3Always"  onclick='toggle("on", "Always")'  style='cursor: pointer;cursor: hand;'>PROMIS Depression: Answered Always to All</h3>
+<div id ="Always"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>	
+EDDEP29</td><td>Always</td><td>2.24</td><td>72.4</td><td>5.30</td></tr><tr><td>
+EDDEP41</td><td>Always</td><td>2.70</td><td>76.0</td><td>4.01</td></tr><tr><td>
+EDDEP04</td><td>Always</td><td>2.84</td><td>78.4</td><td>3.64</td></tr><tr><td>
+EDDEP06</td><td>Always</td><td>2.93</td><td>79.3</td><td>3.46</td></tr><tr><td>
+EDDEP39</td><td>Always</td><td>3.07</td><td>80.7</td><td>3.41</td></tr><tr><td>
+EDDEP09</td><td>Always</td><td>3.13</td><td>81.3</td><td>3.30</td></tr><tr><td>
+EDDEP45</td><td>Always</td><td>3.22</td><td>82.2</td><td>3.22</td></tr><tr><td>
+EDDEP44</td><td>Always</td><td>3.33</td><td>83.3</td><td>3.14</td></tr><tr><td>
+EDDEP30</td><td>Always</td><td>3.38</td><td>83.8</td><td>3.04</td></tr><tr><td>
+EDDEP42</td><td>Always</td><td>3.44</td><td>84.4</td><td>2.94
+</td></tr></table>	</div>
+	
+ 	</center>
+	</body>
+</html>

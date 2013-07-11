@@ -1,0 +1,95 @@
+<html>
+	<head>	
+<script type="text/javascript">
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+	function age(){ 
+		document.getElementById("EducationDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("TitleDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("InstructionDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("PracticeDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("IntroDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("TestDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		localStorage.age = "Adult";
+		localStorage.theta = "";
+		localStorage.data = "";
+		var s = document.getElementById('study');
+		s.contentDocument.write('<center>Select your age and then click BEGIN.<br><br><select><option value="0" onclick="localStorage.age = '+"'"+'Adult'+"'"+';">18+</option><option value="3.1" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">17</option><option value="3.16" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">16</option><option value="2.65" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">15</option><option value="2.45" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">14</option><option value="1.93" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">13</option><option value="1.42" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">12</option><option value="0.79" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">11</option><option value="-0.17" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">10</option><option value="-0.49" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">9</option><option value="-1.69" onclick="localStorage.age = '+"'"+'8-17'+"'"+'; localStorage.theta = this.value;">8</option><option value="-2.52" onclick="localStorage.age = '+"'"+'Child'+"'"+'; localStorage.theta = this.value;">7</option><option value="-2.91" onclick="localStorage.age = '+"'"+'Child'+"'"+'; localStorage.theta = this.value;">6</option><option value="-3.95" onclick="localStorage.age = '+"'"+'Child'+"'"+'; localStorage.theta = this.value;">5</option><option value="-4.89" onclick="localStorage.age = '+"'"+'Child'+"'"+'; localStorage.theta = this.value;">4</option><option value="-5.95" onclick="localStorage.age = '+"'"+'Child'+"'"+'; localStorage.theta = this.value;">3</option></select><br><br><input type="button" value="BEGIN" name="BEGIN" onclick="window.document.location = '+"'"+'stylesheet/defaultSequenceVocabEducation.html'+"'"+';" /></center>');
+		s.contentDocument.close();
+	}
+</script> 
+	</head>
+	<body >
+	<center>
+		<table>
+			<tr>
+			<td>
+				<ul style="list-style-type: none;" >
+					<li><div id="EducationDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Education</li>
+					<li><div id="TitleDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>NIH TB Picture Vocabulary Test - Title</li>
+					<li><div id="InstructionDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>NIH TB Picture Vocabulary Test - Instruction</li>
+					<li><div id="PracticeDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>NIH TB Picture Vocabulary Test - Practice</li>
+					<li><div id="IntroDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>NIH TB Picture Vocabulary Test - Intro</li>
+					<li><div id="TestDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>NIH TB Picture Vocabulary Test</li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='BEGIN' name='BEGIN' onclick="age();" /></li>
+				</ul>
+			</td>
+			<td>
+				<iframe id="study" name="study" scrolling="no" style="float:center;width:850px;height:650px;border-style:solid;" src=""><html><body>
+					<!--<center>Select your age group and then click BEGIN.<input type="radio" name="age" value="Child" onclick="localStorage.age = this.value;" > Child<input type="radio" name="age" value="8-17" onclick="localStorage.age = this.value;" > Ages 8 to 17<input type="radio" name="age" value="Adult" onclick="localStorage.age = this.value;" > Adult<input type='button' value='BEGIN' name='BEGIN' onclick="if (localStorage.age) { window.frames['+"'"+'study'+"'"+'].document.location = '+"'"+'defaultSequenceVocabEducation.html'+"'"+';}" /></center>-->
+				</body></html></iframe>
+			</td>
+			</tr>
+			</table>
+			</center>
+			<script type="text/javascript">
+					var Instrument = getUrlVars()["Instrument"];
+					if (Instrument =='Education') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabTitle.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Title') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabInstruction.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Instruction') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabPractice.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Practice') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabIntro.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Intro') { 
+						window.frames['study'].document.location = 'stylesheet/defaultDichotVocab.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("IntroDiv").innerHTML = '&#x2713;&nbsp;';
+					} 
+					else if (Instrument == 'Test') { 
+						var s = document.getElementById('study');
+						s.contentDocument.write('<pre>'+localStorage.data+'<pre>');
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("IntroDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TestDiv").innerHTML = '&#x2713;&nbsp;';
+						s.contentDocument.close();
+					}
+			</script>
+	</body>
+</html>

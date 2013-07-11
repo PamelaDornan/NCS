@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+	function saveDepression(x) {
+		clearStudy();
+		var html = "<pre style='margin:10px;'>"+localStorage.scoreDepression+"</pre>";
+		window.frames['study'].document.body.innerHTML = html;
+	 }
+	function saveEmotional(x) {
+		clearStudy();
+		var html = "<pre style='margin:10px;'>"+localStorage.scoreEmotional+"</pre>";
+		window.frames['study'].document.body.innerHTML = html;
+	 }
+	 function saveVocabulary(x) {
+		clearStudy();
+		var html = "<pre style='margin:10px;'>"+localStorage.scoreVocabulary+"</pre>";
+		window.frames['study'].document.body.innerHTML = html;
+	 }
+	function age(){ 
+		if(localStorage.vocabulary && localStorage.vocabulary != "") {
+			localStorage.vocabulary++;
+		} else {
+			localStorage.vocabulary++;
+			localStorage.vocabulary = 1;
+			localStorage.scoreVocabulary="Attempt&#9;Item&#9;Response&#9;Theta&#9;Tscore&#9;Error\r\n";
+		}
+		localStorage.html = '';
+		clearStudy();
+		localStorage.age = "Adult";
+		localStorage.theta = "";
+		window.frames['study'].document.location = 'stylesheet/defaultAge.html'; 
+	}
+	function clearStudy() {
+	 document.getElementById("EducationDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("TitleDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("InstructionDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("PracticeDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("IntroDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		document.getElementById("TestDiv").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+	}
+</script> 
+<link href="css/NCS.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body style="margin:20px;">
+		<center>
+			<table cellspacing="0">
+			<tr>
+			<td>
+				<h3>NIH TB Picture Vocabulary: <button onclick="age();" >BEGIN</button></h3>
+				<ul style="list-style-type: none;" >
+					<li><div id="EducationDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Education</li>
+					<li><div id="TitleDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Title</li>
+					<li><div id="InstructionDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Instruction</li>
+					<li><div id="PracticeDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Practice</li>
+					<li><div id="IntroDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Intro</li>
+					<li><div id="TestDiv" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;</div>Picture Vocabulary Test</li>
+					<li>
+						<button onclick="saveVocabulary('vocabulary');">Get Data</button>
+						<button onclick="localStorage.vocabulary = ''; localStorage.scoreVocabulary = '';clearStudy();">Clear Data</button>
+						<button onclick="clearStudy();window.open('testcases/vocabulary.html')">Test Case</button>
+					</li>
+				</ul>
+				<h3>PROMIS Depression: <button class="button" onclick="clearStudy();localStorage.html = '';window.frames['study'].document.location = 'stylesheet/defaultDepression.html';">BEGIN</button></h3>
+				<ul style="list-style-type: none;" >
+				<li>
+				<button onclick="saveDepression('depression');">Get Data</button>
+				<button onclick="localStorage.depression = ''; localStorage.scoreDepression = '';clearStudy();">Clear Data</button>
+				<button onclick="clearStudy();window.open('testcases/depression.html');">Test Case</button>
+				</li>
+				</ul>
+				<h3>PROMIS Emotional Support: <button onclick="clearStudy();localStorage.html = '';window.frames['study'].document.location = 'stylesheet/defaultEmotional.html';">BEGIN</button></h3>
+				<ul style="list-style-type: none;" >
+				<li>
+				<button onclick="saveEmotional('emotional');">Get Data</button>
+				<button onclick="localStorage.emotional = ''; localStorage.scoreEmotional = '';clearStudy();">Clear Data</button>
+				<button onclick="clearStudy();window.open('testcases/emotional.html');">Test Case</button>
+				</li>
+				</ul>
+			</td>
+			<td>
+				<iframe id="study" name="study" scrolling="no"  src=""><html><body>
+					<!--<center>Select your age group and then click BEGIN.<input type="radio" name="age" value="Child" onclick="localStorage.age = this.value;" > Child<input type="radio" name="age" value="8-17" onclick="localStorage.age = this.value;" > Ages 8 to 17<input type="radio" name="age" value="Adult" onclick="localStorage.age = this.value;" > Adult<input type='button' value='BEGIN' name='BEGIN' onclick="if (localStorage.age) { window.frames['+"'"+'study'+"'"+'].document.location = '+"'"+'defaultSequenceVocabEducation.html'+"'"+';}" /></center>-->
+				</body></html></iframe>
+			</td>
+			</tr>
+			</table>
+			</center>
+			<script type="text/javascript">
+					var Instrument = getUrlVars()["Instrument"];
+					if (Instrument =='Education') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabTitle.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Title') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabInstruction.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Instruction') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabPractice.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Practice') { 
+						window.frames['study'].document.location = 'stylesheet/defaultSequenceVocabIntro.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+					}
+					else if (Instrument == 'Intro') { 
+						window.frames['study'].document.location = 'stylesheet/defaultDichotVocab.html'; 
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("IntroDiv").innerHTML = '&#x2713;&nbsp;';
+					} 
+					else if (Instrument == 'Test') { 
+						var s = document.getElementById('study');
+						s.contentDocument.write('<pre>'+localStorage.data+'<pre>');
+						document.getElementById("EducationDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TitleDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("InstructionDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("PracticeDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("IntroDiv").innerHTML = '&#x2713;&nbsp;';
+						document.getElementById("TestDiv").innerHTML = '&#x2713;&nbsp;';
+						s.contentDocument.close();
+					}
+			</script>
+	</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>NCS IRT GRM ENGINE</title>
+<script src="../data/dataVocab.js" type="text/javascript"></script>
+<script src="../json2.js" type="text/javascript"></script>
+<script src="../engine/DichotEngine.js" type="text/javascript"></script>
+<script>
+ 
+ var sequenceEngine;
+ var items;
+ 
+ function loadForm(){
+	var calibrations = JSON.parse(MyCalibration, null);
+	items = JSON.parse(MyDocument, null);
+ 	sequenceEngine = new engine(calibrations, localStorage.theta);
+	sequenceEngine.init( );
+	
+	renderScreen(sequenceEngine.display());
+	
+ }
+ 
+  function toggle(x){
+	//var divs = document.getElementsByTagName('toggle');    
+   // for (i = 0; i < divs.length; i++) {
+	//	divs[i].style.visibility = 'visible';
+	//	divs[i].style.visibility = 'hidden';
+	//	divs[i].style.display = 'none';
+	//	divs[i].style.display = 'inline';        
+   // }
+
+  }
+ 
+function renderScreen(ItemID){
+
+
+	if(sequenceEngine.finished){
+		displayResults();
+		return;
+	}
+
+	var response ="<table rowspace='0' colspace='0'><tbody><tr>";
+	for(var i=0; i < items.Items.length; i++){
+	
+		if(items.Items[i].ID == ItemID){
+			for(var j=0; j < items.Items[i].Elements.length; j++){
+				alert("1");
+				if(typeof(items.Items[i].Elements[j].Map) == 'undefined'){
+					alert("2");
+					screen = screen + items.Items[i].Elements[j].Description + "<br />"
+				}else{
+					alert("3");
+					itemName = items.Items[i].Elements[0].Description;
+					alert("4");
+					for(var k=0; k < items.Items[i].Elements[j].Map.length; k++){
+						var itemValue = items.Items[i].Elements[j].Map[k].Description;
+						alert("5");
+						itemValue = itemValue.split("-");
+						if (itemValue[1] == '9') {
+							alert("6");
+							itemValue = "Correct";
+						} else {
+							alert("7");
+							itemValue = "Incorrect";
+						}
+						if(k ==2) response = response + "</tr><tr>";
+						alert("8");						
+						response = response + "<td width='410px;' height='275px' ><center><input type='image' id=\'" + items.Items[i].Elements[j].Map[k].FormItemOID + "\' name=\'" + items.Items[i].Elements[j].Map[k].ItemResponseOID + "\' value=\'" + items.Items[i].Elements[j].Map[k].Description +  "\' onclick=selectResponse(" + items.Items[i].Elements[j].Map[k].Value + ") src ='../images/" + items.Items[i].Elements[j].Map[k].Description + ".jpg' />"    + "</center><div name='toggle' id='toggle' class='toggle' style='font-size: 3em; display: block; position: absolute; z-index: 99; margin-top:-60px;'>"+itemValue+"</div></td>";						
+					}
+					response = response + "</tr></tbody></table>";
+					alert("9");
+				}
+			
+			}
+			alert("10");
+			document.getElementById("container").innerHTML = '<div id="toggle" name="toggle" class="toggle" style="font-size: 2em;">'+itemName+'</div><audio controls="controls" autoplay height="50px" width="100px"><source src="en-US/'+items.Items[i].ID+'.mp3" type="audio/mp3" /><source src="../sound/OGG/'+items.Items[i].ID+'.ogg" type="audio/ogg" /><embed height="50px" width="100px" src="../sound/'+items.Items[i].ID+'.mp3" /></audio> <button onclick="toggle('+"'on'"+');">Toggle</button>';
+		}
+	}
+	document.getElementById("responseitems").innerHTML = response;
+	alert("12");
+	return;
+}
+
+ function selectResponse(answer){
+
+	sequenceEngine.processResponse(answer);
+	var NextItem = sequenceEngine.next();
+	renderScreen( sequenceEngine.ID) ;
+	return;
+
+ }
+ 
+ function displayResults(){
+	localStorage.data = localStorage.data + sequenceEngine.displayResults();
+	parent.location.href = '../index.html?Instrument=Test';
+ }
+ 
+  /*function displayResults(){
+	if(!localStorage.vocabulary || localStorage.vocabulary == "") {
+		localStorage.vocabulary = 1;
+		localStorage.scoreVocabulary="Attempt&#9;Item&#9;Response&#9;Theta&#9;Tscore&#9;Error\r\n";
+	} else {
+		localStorage.vocabulary++;
+	}
+	var scr = sequenceEngine.displayResults();
+	var param = scr.split("\r\n");
+	localStorage.html = "Attempt&#9;Item&#9;Response&#9;Theta&#9;Tscore&#9;Error<br>";
+	var tscore; // a scaled representation of the theta score given by the engine (theta * 10 +50).
+	var scaledSE; // a scaled representation of the standarded error given by the engine.
+	for(var i=0; i<param.length; i=i+1) {
+		alert(param[i]);
+		var param2 = param[i].split("&#9;");
+		tscore = (param2[2] * 10) + 50; //Scale
+		tscore = tscore.toFixed(1); //round single decimal
+		scaledSE =  param2[3] * 10; //Scale
+		scaledSE = scaledSE.toFixed(1); //round single decimal
+		localStorage.html = localStorage.html + param2[0] + "&#9;" + param2[1] + "&#9;" +  param2[2] + "&#9;" + tscore + "&#9;" +  scaledSE + "\r\n";
+		localStorage.scoreVocabulary= localStorage.scoreVocabulary + localStorage.depression + "&#9;" + param2[0] + "&#9;" + param2[2] + "&#9;" + param2[3] + "&#9;" + tscore + "&#9;" + scaledSE + "\r\n";
+	}
+	document.getElementById("container").innerHTML="<pre>"+localStorage.html+"</pre>";
+	document.getElementById("responseitems").innerHTML="";
+ }*/
+ 
+ </script>
+ <STYLE type="text/css">
+	button, .button {
+		margin-top:5px;
+		border: 2px solid #000000;
+		background: #ffffff;
+		padding: 5px 10px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		width:60px;
+		text-shadow: rgba(0,0,0,2) 0 1px 0;
+		color: #262426;
+		font-size: 14px;
+		font-family: Helvetica, Arial, Sans-Serif;
+		text-decoration: none;
+		vertical-align: middle;
+		vertical-align:50%;
+	}
+	button:hover {
+		border-top-color: #000000;
+		background: #000000;
+		color: #ffffff;
+	}
+	button:active {
+		border-top-color: #fafafa;
+		background: #fafafa;
+	}
+	.toggle {
+		display:inline;
+		font-weight: bolder;
+		unicode-bidi: embed;
+		font-size: 3em; 
+		margin: .83em 0; 
+		vertical-align:10%;
+		padding:5px;
+		color:#FF0000;
+	}
+ </STYLE>
+ </head>
+ <body onload='loadForm()'>
+   <table style="" cellSpacing="0" cellPadding="0">
+    <tbody>
+     <tr>
+      <td>
+        <table id="wrapper">
+         <tbody>
+          <tr>
+           <td>
+			<center>
+			    <div id='container' class='Item'  ></div>
+             </center>
+           </td>
+          </tr>
+          <tr>
+           <td class="container-btn select-btn">
+				<center><div id='responseitems' class='Item' ></div></center>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+ </body>
+ </html>

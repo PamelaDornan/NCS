@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<meta charset="UTF-8">
+		<script>
+			var last="Never";
+			function closeAll() {
+					document.getElementById(last).style.visibility = 'hidden';
+					document.getElementById(last).style.display = 'none';
+			}
+			function toggle(tog, x){
+				var visibility = document.getElementById(x).style.visibility;
+				var display = document.getElementById(x).style.display;
+				closeAll();
+				if (visibility == "visible" || display == "inline"){ 
+					document.getElementById(x).style.visibility = 'hidden';
+					document.getElementById(x).style.display = 'none';   
+					var action = 'on';
+				} 
+				if (visibility == "hidden" || display == "none"){ 
+					document.getElementById(x).style.visibility = 'visible';
+					document.getElementById(x).style.display = 'inline';  
+					var action = 'off';
+				} 
+				last=x;
+			}
+		</script>
+		<link href="../css/NCS.css" rel="stylesheet" type="text/css" />
+	<header>
+	<body>
+	<center>
+	
+	<h3 class="testcase" id='H3Never' onclick='toggle("on", "Never")' style='cursor: pointer;cursor: hand;'>PROMIS Emotional Support: Answered Never to All</h3>
+	<div id ="Never" style="visibility:hidden;display:none;">
+	<table class="testcase" cellpadding="10"><tr>
+	<th>Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+	FSE31059x2</td><td>Never</td><td>-1.89</td><td>31.1</td><td>4.81</td></tr><tr><td>
+FSE31053x2</td><td>Never</td><td>-2.20</td><td>28.0</td><td>4.17</td></tr><tr><td>
+UCLA19x3</td><td>Never</td><td>-2.38</td><td>26.2</td><td>4.05</td></tr><tr><td>
+SSQ1x</td><td>Never</td><td>-2.64</td><td>23.6</td><td>4.17</td></tr><tr><td>
+SSE-CaPS7</td><td>Never</td><td>-2.74</td><td>22.6</td><td>4.01</td></tr><tr><td>
+SS11x</td><td>Never</td><td>-2.80</td><td>22.0</td><td>3.90</td></tr><tr><td>
+SSQ2x</td><td>Never</td><td>-2.85</td><td>21.5</td><td>3.81</td></tr><tr><td>
+SS12x</td><td>Never</td><td>-2.87</td><td>21.3</td><td>3.74</td></tr><tr><td>
+GS1x</td><td>Never</td><td>-2.93</td><td>20.7</td><td>3.73</td></tr><tr><td>
+GS2x</td><td>Never</td><td>-2.96</td><td>20.4</td><td>3.69</td></tr><tr><td>
+UCLA16x2</td><td>Never</td><td>-2.98</td><td>20.2</td><td>3.65</td></tr><tr><td>
+SSQ3x2</td><td>Never</td><td>-2.98</td><td>20.2</td><td>3.62
+</td></tr></table></div>
+<h3 class="testcase" id="H3Rarely" onclick='toggle("on", "Rarely")'  style='cursor: pointer;cursor: hand;'>PROMIS Emotional Support: Answered Rarely to All</h3>
+<div id ="Rarely"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+FSE31059x2</td><td>Rarely</td><td>-1.17</td><td>38.3</td><td>3.46</td></tr><tr><td>
+SSQ4x2</td><td>Rarely</td><td>-1.27</td><td>37.3</td><td>2.44</td></tr><tr><td>
+FSE31053x2</td><td>Rarely</td><td>-1.36</td><td>36.4</td><td>2.02</td></tr><tr><td>
+SSE-CaPS6</td><td>Rarely</td><td>-1.35</td><td>36.5</td><td>1.74
+</td></tr></table></div>
+<h3 class="testcase" id="H3Sometimes" onclick='toggle("on", "Sometimes")'  style='cursor: pointer;cursor: hand;'>PROMIS Emotional Support: Answered Sometimes to All</h3>
+<div id ="Sometimes"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>
+FSE31059x2</th><th>Sometimes</th><th>-0.65</th><th>43.5</th><th>3.35</td></tr><tr><td>
+SSQ4x2</th><th>Sometimes</th><th>-0.72</th><th>42.8</th><th>2.37</td></tr><tr><td>
+SSE-CaPS6</th><th>Sometimes</th><th>-0.74</th><th>42.6</th><th>1.98</td></tr><tr><td>
+FSE31053x2</th><th>Sometimes</th><th>-0.77</th><th>42.3</th><th>1.74
+</td></tr></table></div>
+<h3 class="testcase" id="H3Often" onclick='toggle("on", "Usually")'  style='cursor: pointer;cursor: hand;'>PROMIS Emotional Support: Answered Usually to All</h3>
+<div id ="Usually"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>	
+FSE31059x2</td><td>Usually</td><td>-0.1</td><td>49.0</td><td>3.46</td></tr><tr><td>
+SSQ4x2</td><td>Usually</td><td>-0.13</td><td>48.7</td><td>2.53</td></tr><tr><td>
+SSE-CaPS6</td><td>Usually</td><td>-0.13</td><td>48.7</td><td>2.11</td></tr><tr><td>
+FSE31053x2</td><td>Usually</td><td>-0.13</td><td>48.7</td><td>1.88
+</td></tr></table></div>
+<h3 class="testcase" id="H3Always"  onclick='toggle("on", "Always")'  style='cursor: pointer;cursor: hand;'>PROMIS Emotional Support: Answered Always to All</h3>
+<div id ="Always"  style="visibility:hidden;display:none;">
+<table id="" class="testcase" cellpadding="10"><tr><th>
+Item</th><th>Response</th><th>Theta</th><th>Tscore</th><th>Error</th></tr><tr><td>	
+FSE31059x2</td><td>Always</td><td>0.90</td><td>59.0</td><td>6.16</td></tr><tr><td>
+FSE31069x2</td><td>Always</td><td>1.15</td><td>61.5</td><td>5.65</td></tr><tr><td>
+UCLA16x2</td><td>Always</td><td>1.36</td><td>63.6</td><td>5.50</td></tr><tr><td>
+SSQ3x2</td><td>Always</td><td>1.40</td><td>64.0</td><td>5.38</td></tr><tr><td>
+GS1x</td><td>Always</td><td>1.50</td><td>65.0</td><td>5.37</td></tr><tr><td>
+SS12x</td><td>Always</td><td>1.52</td><td>65.2</td><td>5.30</td></tr><tr><td>
+FSE31066x2</td><td>Always</td><td>1.54</td><td>65.4</td><td>5.25</td></tr><tr><td>
+GS2x</td><td>Always</td><td>1.57</td><td>65.7</td><td>5.21</td></tr><tr><td>
+SSQ2x</td><td>Always</td><td>1.59</td><td>65.9</td><td>5.17</td></tr><tr><td>
+SSE-CaPS7</td><td>Always</td><td>1.60</td><td>66.0</td><td>5.14</td></tr><tr><td>
+SS11x</td><td>Always</td><td>1.61</td><td>66.1</td><td>5.12</td></tr><tr><td>
+UCLA19x3</td><td>Always</td><td>1.62</td><td>66.2</td><td>5.09
+</td></tr></table>	</div>
+	
+ 	</center>
+	</body>
+</html>
